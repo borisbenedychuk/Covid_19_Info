@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">COVID-19 Info</string>
+    <string name="no_data_provided">No Data Provided</string>
+    <string name="country_name">country</string>
+    <string name="confirmed_cases">Confirmed cases: %s</string>
+    <string name="confirmed_rate">ConfirmedRate: %s </string>
+    <string name="death_cases">Death cases: %s</string>
+    <string name="death_rate">DeathRate: %s </string>
+    <string name="vaccinated">Vaccinated: %s</string>
+    <string name="partially_vaccinated">Partially Vaccinated: %s</string>
+    <string name="administered">Administered: %s</string>
+    <string name="live_expectancy">Live Expectancy: %s</string>
+    <string name="loading_picture">loading picture</string>
+    <string name="image_vaccinated">image vaccinated</string>
+    <string name="image_cases">image cases</string>
+    <string name="explore">EXPLORE</string>
+    <string name="covid_19">COVID-19</string>
+    <string name="data">DATA</string>
+    <string name="covid_info">Covid Info</string>
+</resources>
