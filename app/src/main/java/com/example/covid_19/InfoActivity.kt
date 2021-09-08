@@ -1,21 +1,19 @@
 package com.example.covid_19
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.ScrollView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.text.DecimalFormat
@@ -68,12 +66,21 @@ class InfoActivity : AppCompatActivity() {
         constraintLayout = findViewById(R.id.clSecondCard)
         cardViewCases = findViewById(R.id.cardViewCases)
         cardViewVaccines = findViewById(R.id.cardViewVaccines)
-
         viewModel = ViewModelProvider(this)[CovidViewModel::class.java]
-
-        val intent = intent
         if (intent.hasExtra(COUNTRY)) {
-            country = intent?.getStringExtra(COUNTRY) ?: return
+            lifecycleScope.launch (Dispatchers.Main) {
+                progressBar.visibility = View.VISIBLE
+                imageViewLoading.visibility = View.VISIBLE
+                scrollView.visibility = View.GONE
+                withContext(Dispatchers.IO) {
+                    launch { viewModel.loadCases(intent.getStringExtra(COUNTRY)!!) }.join()
+                    launch { viewModel.loadVaccines(intent.getStringExtra(COUNTRY)!!) }.join()
+                }
+                progressBar.visibility = View.GONE
+                imageViewLoading.visibility = View.GONE
+                scrollView.visibility = View.VISIBLE
+                intent.removeExtra(COUNTRY)
+            }
         }
         viewModel.casesInfo.observe(this) {
             if (it != null) {
@@ -111,18 +118,7 @@ class InfoActivity : AppCompatActivity() {
                 cardViewVaccines.visibility = View.GONE
             }
         }
-        lifecycleScope.launch (Dispatchers.Main) {
-            progressBar.visibility = View.VISIBLE
-            imageViewLoading.visibility = View.VISIBLE
-            scrollView.visibility = View.GONE
-            withContext(Dispatchers.IO) {
-                launch { viewModel.loadCases(country) }.join()
-                launch { viewModel.loadVaccines(country) }.join()
-            }
-            progressBar.visibility = View.GONE
-            imageViewLoading.visibility = View.GONE
-            scrollView.visibility = View.VISIBLE
-        }
+
     }
 
     companion object {

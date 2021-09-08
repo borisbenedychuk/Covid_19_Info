@@ -10,20 +10,20 @@
         android:id="@+id/imageViewLoading"
         android:layout_width="130dp"
         android:layout_height="116dp"
-        android:visibility="visible"
+        android:contentDescription="@string/loading_picture"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/loading_covid"
-        android:contentDescription="@string/loading_picture"/>
+        app:srcCompat="@drawable/loading_covid" />
 
     <ProgressBar
         android:id="@+id/progressBarLoading"
         style="?android:attr/progressBarStyle"
         android:layout_width="41dp"
         android:layout_height="41dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline4" />
@@ -40,7 +40,6 @@
         android:id="@+id/scrollViewInfoActivity"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -142,10 +141,10 @@
                         android:layout_height="100dp"
                         android:layout_marginTop="20dp"
                         android:layout_marginEnd="16dp"
+                        android:contentDescription="@string/image_cases"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvDeathRate"
-                        app:srcCompat="@drawable/header_covid_virus"
-                        android:contentDescription="@string/image_cases"/>
+                        app:srcCompat="@drawable/header_covid_virus" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -178,11 +177,11 @@
                         android:layout_height="100dp"
                         android:layout_marginTop="45dp"
                         android:layout_marginEnd="16dp"
+                        android:contentDescription="@string/image_vaccinated"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvAdministered"
-                        app:srcCompat="@drawable/vaccine"
-                        android:contentDescription="@string/image_vaccinated"/>
+                        app:srcCompat="@drawable/vaccine" />
 
                     <TextView
                         android:id="@+id/tvCountryName2"
