@@ -87,7 +87,7 @@
 
                     <TextView
                         android:id="@+id/tvConfirmedCases"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
@@ -100,7 +100,7 @@
 
                     <TextView
                         android:id="@+id/tvConfirmedRate"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:text="@string/confirmed_rate"
@@ -113,7 +113,7 @@
                     <TextView
 
                         android:id="@+id/tvDeathCases"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:text="@string/death_cases"
@@ -125,7 +125,7 @@
 
                     <TextView
                         android:id="@+id/tvDeathRate"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:text="@string/death_rate"
@@ -200,7 +200,7 @@
 
                     <TextView
                         android:id="@+id/tvVaccinated"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
@@ -214,7 +214,7 @@
 
                     <TextView
                         android:id="@+id/tvPartiallyVaccinated"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:gravity="end"
@@ -228,7 +228,7 @@
                     <TextView
 
                         android:id="@+id/tvAdministered"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:gravity="end"
