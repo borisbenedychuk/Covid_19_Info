@@ -1,8 +1,10 @@
 package com.example.covid_19
 
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -26,10 +28,14 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         listView = findViewById(R.id.listView)
+        val id = resources.getIdentifier("android:id/search_src_text", null, null)
+        val textView = findViewById<TextView>(id)
+        textView.typeface = resources.getFont(R.font.poppins)
         countriesAdapter = CountriesArrayAdapter(this@MainActivity)
         listView.adapter = countriesAdapter
         searchView = findViewById(R.id.searchViewCountry)
